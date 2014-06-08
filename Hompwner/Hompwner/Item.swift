@@ -42,7 +42,6 @@ class Item : NSObject {
 		let serialNumber = "AA000"
 		var newSerialNumber:String = ""
 		for utf8character in serialNumber.utf8 {
-			var characterResult = 0
 			var thisChar:String?
 			if Int(utf8character) == 65 {
 				thisChar = String().bridgeToObjectiveC().stringByAppendingFormat("%C",((Int(utf8character) + Int(arc4random()) % 26)))
