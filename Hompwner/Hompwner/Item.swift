@@ -29,8 +29,8 @@ class Item : NSObject {
 	}
 	
 	class func randomItem() -> Item {
-		let randomAdjectiveList = ["💩", "💦", "💨"]
-		let randomNounList = ["🐻", "🐷", "🐤"]
+		let randomAdjectiveList = ["💩", "💦", "💨", "💤", "✨", "💭", "💬", "🔥", "🚀"]
+		let randomNounList = ["🐻", "🐷", "🐤", "🐮", "🐵", "🐶", "🐱", "🐸"]
 		
 		let randomAdjectiveListIndex = Int(arc4random()) % randomAdjectiveList.count
 		let randomNounListIndex = Int(arc4random()) % randomNounList.count
