@@ -16,4 +16,22 @@ class ItemsViewController : UITableViewController {
 			ItemStore.sharedStore().createItem()
 		}
 	}
+	
+	override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+		return ItemStore.sharedStore().allItems.count
+	}
+	
+	override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+		var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell") as UITableViewCell
+		
+		if cell != nil {
+			cell = UITableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier:"UITableViewCell")
+		}
+		
+		let item = ItemStore.sharedStore().allItems[indexPath.row]
+		
+		cell.textLabel.text = item.description()
+		
+		return cell
+	}
 }
